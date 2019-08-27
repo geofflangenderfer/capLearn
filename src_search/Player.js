@@ -13,9 +13,9 @@ class Player extends React.Component {
             spokenTextValue : '',
             primaryTextValue : '' 
         };
-//        this.emailTextarea = React.createRef();
-//        this.emailSubmitButton = React.createRef();
-//        this.youtubePlayer = React.createRef();
+        this.emailTextarea = React.createRef();
+        this.emailSubmitButton = React.createRef();
+        this.youtubePlayer = React.createRef();
     }
 
     componentDidMount() {
