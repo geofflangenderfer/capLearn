@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>Player</title>
+        <style>
+            .wrapper {
+                display:grid;
+                grid-template-columns: 1fr 1fr;
+                grid-auto-rows: minmax(100px, auto);
+                grid-gap: 1em;
+                grid-template-areas:
+                "b c"
+                "b d"
+                "e e"
+                "f f"
+                "f f"
+                "g g";
+            }
+            
+            .wrapper > div {
+                background: #eee;
+                padding: 1em;
+            }
+            .wrapper > div:nth-child(odd) {
+                background: #ddd;
+            }
+            .navbar {
+                grid-area:a;
+                align-self: center;
+            }
+            .player {
+                display: grid;
+                justify-content: center;
+                align-content: center;
+                grid-area:b;
+            }
+            .buttons {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-areas:
+                ". replay next .";
+                grid-area:e;
+            }
+            .spokenTextbox {
+                grid-area:c;
+            }
+            .primaryTextbox {
+                grid-area:d;
+
+            }
+            .answers{
+                grid-area:f;
+                display: grid;
+                justify-content: center;
+                align-content: center;
+            }
+            .subscribe{
+                grid-area:g;
+                display: grid;
+                justify-content: center;
+                align-content: center;
+            }
+            .nested-navbar {
+                justify-items: center;
+            }
+            .buttons > div {
+                display: grid;
+                justify-content: center;
+                align-content: center;
+                border: 1px solid;
+            }
+            .replay {
+                grid-area: replay
+                /*align-self: center;*/
+            }
+            .next {
+                grid-area: next
+                /*align-self: center;*/
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="subscribe">Subscribe</div>
+            <div class="player">Player</div>
+            <div class="buttons">
+                <div class="next">Next</div>
+                <div class="replay">Replay</div>
+            </div>
+            <div class="spokenTextbox">Spoken Transcription</div>
+            <div class="primaryTextbox">Primary Translation</div>
+            <div class="answers">Answers</div>
+
+            
+        </div>
+    </body>
+</html>

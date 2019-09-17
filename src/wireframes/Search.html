@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>Search</title>
+        <style type="text/css" media="screen">
+            .wrapper {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-auto-rows: minmax(100px, auto);
+                grid-gap: 1em;
+                grid-template-areas:
+                ". . ."
+                ". explanation ."
+                ". form ."
+                ". . ."
+            }
+            .explanation {
+                grid-area: explanation;
+            }
+            .form {
+                position: relative;
+                grid-area: form;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="explanation">
+               Youtube Video Search:
+            </div>
+            <div class="form">
+                <form action="Search_submit" method="get" accept-charset="utf-8">
+                    <input type="text" value="" name="" id=""/>
+                    <input type="submit" value="Search" name="" id=""/>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

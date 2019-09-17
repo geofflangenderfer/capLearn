@@ -1,7 +1,7 @@
 import React from 'react';
 import YouTube from 'react-youtube';
-import Subscriber from './Subscriber';
-import { initGA, logPageView, logEvent } from './analytics';
+import Subscriber from '../Subscriber/Subscriber';
+import { initGA, logPageView, logEvent } from '../../services/analytics';
 
 class Player extends React.Component {
     constructor(props) {

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Video Info</title>
+    <style type="text/css" media="screen">
+      body {
+        background-image: linear-gradient(125deg, #034F05,#06900A);
+        height: 100vh;
+      }
+      input[type=text], select, textarea{
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        resize: vertical;
+      }
+      label {
+        padding: 12px 12px 12px 0;
+        display: inline-block;
+        color: white;
+        font-family: 'montserrat', sans-serif;
+      }
+      input[type=submit], .youtube-search {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        float: right;
+      }
+      .container {
+        border-radius: 5px;
+        padding: 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .col-25 {
+        float: left;
+        width: 25%;
+        margin-top: 6px;
+      }
+      .col-75 {
+        float: left;
+        width: 75%;
+        margin-top: 6px;
+      }
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      @media screen and (max-width: 600px) {
+        .col-25, .col-75, input[type=submit] {
+          width: 100%;
+          margin-top: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form action="" method="get" accept-charset="utf-8">
+        <div class="row">
+          <div class="col-25">
+            <label for="native-language">I speak:</label>
+          </div>
+          <div class="col-75">
+            <select name="language" id="language">
+              <option value=""></option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="target-language">I am studying:</label>
+          </div>
+          <div class="col-75">
+            <select name="target-language" id="target-language">
+              <option value=""></option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="query">Youtube Video:</label> 
+          </div> 
+          <div class="col-75">
+            <input type="text" value="" name="query" id="query"/> 
+            <button class="youtube-search">Search</button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="search-results">Search Results:</label> 
+            <div class="col-75">
+              <div class="search-results">
+              </div> 
+            </div>
+          </div> 
+        </div>
+        <div class="row">
+          <input type="submit" value="Submit" />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
