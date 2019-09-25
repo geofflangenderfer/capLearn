@@ -1,36 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 //import YoutubeSearch from '../../services/YoutubeSearch/YoutubeSearch';
 import dummy_data from './dummy_data';
 import './Form.css';
 
-const languages = {
-  "Chinese": "zh",
-  "Spanish": "es",
-  "English": "en",
-  "Hindi": "hi",
-  "Arabic": "ar",
-  "Portuguese": "pt",
-  "Bengali": "bn",
-  "Russian": "ru",
-  "Japanese": "ja",
-  "Javanese": "jv",
-  "German": "de",
-  "Korean": "ko",
-  "French": "fr",
-  "Telugu": "te",
-  "Marathi": "mr",
-  "Turkish": "tr",
-  "Tamil": "ta",
-  "Vietnamese": "vi",
-  "Urdu": "ur"
-};
 
-const Form = () => {
-  const [primaryLanguage, setPrimaryLanguage] = useState("");
-  const [targetLanguage, setTargetLanguage] = useState("");
-  const [videoId, setVideoId] = useState("");
-  const [query, setQuery] = useState("");
-  const [queryResults, setQueryResults] = useState([]);
+const Form = props => {
+  const { 
+    languages,
+    setPrimaryLanguage,
+    setTargetLanguage,
+    setVideoId,
+    setQuery,
+    queryResults,
+    setQueryResults 
+  } = props;
 
   const updateQueryResults = e => {
     e.preventDefault();
@@ -65,6 +48,7 @@ const Form = () => {
   };
 
   return (
+
     <div className="container">
       <form onSubmit={handleFormSubmit}>
         <div className="row">
@@ -72,13 +56,17 @@ const Form = () => {
             <label htmlFor="native-language">I speak:</label>
           </div>
           <div className="col-75">
-            <select name="language" id="language">
+            <select 
+              onChange={e => setPrimaryLanguage(e.target.value)} 
+              name="primary-language" 
+              id="primary-language"
+            >
                 <option key="" value=""></option>
               {Object.keys(languages).map(language => (
                 <option 
                   value={languages[language]} 
                   key={language}
-                  onClick={e => setPrimaryLanguage(e.target.value)}
+                  onChange={e => setPrimaryLanguage(e.target.value)}
                 >
                   {language}
                 </option>
@@ -91,13 +79,17 @@ const Form = () => {
             <label htmlFor="target-language">I am studying:</label>
           </div>
           <div className="col-75">
-            <select name="target-language" id="target-language">
+            <select 
+              onChange={e => setTargetLanguage(e.target.value)} 
+              name="target-language" 
+              id="target-language"
+            >
               <option value=""></option>
               {Object.keys(languages).map(language => (
                 <option 
                   value={languages[language]} 
                   key={language}
-                  onClick={e => setTargetLanguage(e.target.value)}
+                  
                 >
                   {language}
                 </option>
@@ -113,7 +105,6 @@ const Form = () => {
             <input 
               type="text" 
               onChange={e => setQuery(e.target.value)} 
-              value={query} 
               id="query"
             /> 
             <button onClick={updateQueryResults} className="youtube-search">Search</button>
